@@ -1,0 +1,15 @@
+class COLORS:
+    HEADER = "\033[95m"
+    WHITE = "\u001b[37m"
+    BLUE = "\033[94m"
+    CYAN = "\033[96m"
+    GREEN = "\u001b[32m"
+    RED = "\u001b[31m"
+    YELLOW = "\u001b[33m"
+    PINK = "\u001b[35m"
+    FAIL = "\033[91m"
+    END = "\033[0m"
+    BOLD = "\033[1m"
+    UNDERLINE = "\033[4m"
+    RESET = "\u001b[0m"
+
