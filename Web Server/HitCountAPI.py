@@ -1,3 +1,5 @@
+import sys
+
 from flask_restful import Resource
 from flask import current_app as app
 from flask import jsonify
@@ -11,7 +13,7 @@ PUT_hits = 0
 DELETE_hits = 0
 
 # Prints HTTP method hit every LOG_FREQUENCY times
-LOG_FREQUENCY = 10
+LOG_FREQUENCY = 100
 
 
 class HitCountAPI(Resource):
@@ -25,6 +27,7 @@ class HitCountAPI(Resource):
             msg = "\n{} GET Method Hit : {}".format(
                 total_hits, GET_hits)
             print(COLORS.BOLD, COLORS.GREEN, msg, COLORS.END)
+            sys.stdout.flush()
         data = {
             "No. of GET Hits": GET_hits,
             "No. of POST Hits": POST_hits,
@@ -43,6 +46,7 @@ class HitCountAPI(Resource):
             msg = "\n{} POST Method Hit : {}".format(
                 total_hits, POST_hits)
             print(COLORS.BOLD, COLORS.CYAN, msg, COLORS.END)
+            sys.stdout.flush()
         data = {
             "No. of GET Hits": GET_hits,
             "No. of POST Hits": POST_hits,
@@ -61,6 +65,7 @@ class HitCountAPI(Resource):
             msg = "\n{} PUT Method Hit : {}".format(
                 total_hits, PUT_hits)
             print(COLORS.BOLD, COLORS.BLUE, msg, COLORS.END)
+            sys.stdout.flush()
         data = {
             "No. of GET Hits": GET_hits,
             "No. of POST Hits": POST_hits,
@@ -79,6 +84,7 @@ class HitCountAPI(Resource):
             msg = "\n{} DELETE Method Hit : {}".format(
                 total_hits, DELETE_hits)
             print(COLORS.BOLD, COLORS.PINK, msg, COLORS.END)
+            sys.stdout.flush()
         data = {
             "No. of GET Hits": GET_hits,
             "No. of POST Hits": POST_hits,
